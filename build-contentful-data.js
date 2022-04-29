@@ -4,7 +4,7 @@ const path = require("path");
 const {
   contentfulContent,
   saveContent,
-} = require("./shared/contentfulContent");
+} = require("./shared/contentfulContent-common");
 
 const fetchAndSaveContent = async () => {
   console.log("deleting site-content");
