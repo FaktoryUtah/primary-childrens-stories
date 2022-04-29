@@ -3,8 +3,8 @@ const fs = require("fs");
 const path = require("path");
 const {
   contentfulContent,
-  saveContent
-} = require("./shared/contentfulContent-common");
+  saveContent,
+} = require("./shared/contentfulContent");
 
 const fetchAndSaveContent = async () => {
   console.log("deleting site-content");

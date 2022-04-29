@@ -186,6 +186,10 @@ const Map = ({
                 setTranslation(props.translation);
               }
             }}
+            value={{
+              scale,
+              translation,
+            }}
             scale={scale}
             translation={translation}
             translationBounds={{
