@@ -1,13 +1,13 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { MapInteractionCSS } from "react-map-interaction";
 import useWindowSize from "shared/hooks/useWindowSize";
-import StoryOverlay from "./story-overlay";
 import Animations from "./animations";
 import Nav from "./nav";
-import StoryPins from "./story-pins";
-import WelcomeOverlay from "./welcome-overlay";
-import TemporaryWelcomeMap from "./temporary-welcome-map";
 import PageArrows from "./page-arrows";
+import StoryOverlay from "./story-overlay";
+import StoryPins from "./story-pins";
+import TemporaryWelcomeMap from "./temporary-welcome-map";
+import WelcomeOverlay from "./welcome-overlay";
 
 const Map = ({
   aboutTabContent,
