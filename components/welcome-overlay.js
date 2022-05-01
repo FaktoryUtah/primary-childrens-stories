@@ -6,7 +6,7 @@ const WelcomeOverlay = ({ dismissOverlay, welcomeOverlayContent }) => {
   return (
     <>
       <div
-        className="fixed opacity-50 bg-white inset-0 z-50"
+        className="fixed opacity-50 bg-blue-400 inset-0 z-50"
         onClick={dismissOverlay}
       />
       <div
