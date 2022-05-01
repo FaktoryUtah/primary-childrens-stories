@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useSpring, animated } from "react-spring";
+import React from "react";
+import { animated, useSpring } from "react-spring";
 import WelcomeMap from "./animations/welcome-map";
 
 const TemporaryWelcomeMap = () => {

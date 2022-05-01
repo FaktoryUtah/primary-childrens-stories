@@ -1,9 +1,5 @@
 module.exports = {
-  purge: ["./components/**/*.js", "./pages/**/*.js", "./public/**/*.html"],
-  future: {
-    purgeLayersByDefault: true,
-    removeDeprecatedGapUtilities: true,
-  },
+  content: ["./components/**/*.js", "./pages/**/*.js", "./public/**/*.html"],
   theme: {
     extend: {
       colors: {
@@ -43,6 +39,5 @@ module.exports = {
       },
     },
   },
-  variants: {},
   plugins: [require("tailwindcss-padding-safe")()],
 };

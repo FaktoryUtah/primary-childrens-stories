@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import Head from "next/head";
 import MapSimple from "components/map-simple";
+import Head from "next/head";
+import React, { useEffect } from "react";
 
 const Pin = () => {
   useEffect(() => {

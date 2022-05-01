@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const {
   contentfulContent,
-  saveContent
+  saveContent,
 } = require("./shared/contentfulContent-common");
 
 const fetchAndSaveContent = async () => {

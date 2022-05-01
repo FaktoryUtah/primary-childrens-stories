@@ -56,7 +56,7 @@ const Story = ({ story, title, body, footerText, media }) => {
         }}
       >
         <div
-          className="relative z-30 story-content max-w-3xl mt-4 mb-12 bg-white px-4 mx-4 lg:mx-auto lg:px-16 py-10 rounded-lg"
+          className="relative z-30 story-content max-w-3xl xl:max-w-4xl mt-4 mb-12 bg-white px-4 mx-4 md:mx-auto lg:px-16 py-10 rounded-lg"
           onClick={(e) => {
             e.stopPropagation();
           }}
@@ -122,7 +122,7 @@ const Story = ({ story, title, body, footerText, media }) => {
         </div>
       </div>
       <div
-        className="fixed inset-0 bg-gray-600 opacity-50"
+        className="fixed inset-0 bg-blue-400 opacity-50"
         onClick={() => {
           Router.push("/");
         }}

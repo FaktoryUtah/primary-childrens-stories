@@ -1,13 +1,13 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { MapInteractionCSS } from "react-map-interaction";
 import useWindowSize from "shared/hooks/useWindowSize";
-import StoryOverlay from "./story-overlay";
 import Animations from "./animations";
 import Nav from "./nav";
-import StoryPins from "./story-pins";
-import WelcomeOverlay from "./welcome-overlay";
-import TemporaryWelcomeMap from "./temporary-welcome-map";
 import PageArrows from "./page-arrows";
+import StoryOverlay from "./story-overlay";
+import StoryPins from "./story-pins";
+import TemporaryWelcomeMap from "./temporary-welcome-map";
+import WelcomeOverlay from "./welcome-overlay";
 
 const Map = ({
   aboutTabContent,
@@ -49,6 +49,10 @@ const Map = ({
   const [pinDimensions, setPinDimensions] = useState([45, 68]);
   const [userHasMovedMap, setUserHasMovedMap] = useState(false);
   const [showHelpers, setShowHelpers] = useState(false);
+  const [clickPosition, setClickPosition] = useState({
+    x: null,
+    y: null,
+  });
 
   const size = useWindowSize();
   const mapImage = useRef(null);
@@ -137,6 +141,26 @@ const Map = ({
     setHideWelcomeOverlay(true);
   };
 
+  const handlePCHPinClickStart = (e) => {
+    setClickPosition({
+      x: e.nativeEvent.screenX,
+      y: e.nativeEvent.screenY,
+    });
+  };
+
+  const handlePCHPinClickEnd = (e) => {
+    if (
+      clickPosition.x === e.nativeEvent.screenX &&
+      clickPosition.y === e.nativeEvent.screenY
+    ) {
+      setActiveStory("main");
+    }
+    setClickPosition({
+      x: null,
+      y: null,
+    });
+  };
+
   return (
     <div>
       {!hideWelcomeOverlay && (
@@ -185,6 +209,10 @@ const Map = ({
               if (translation !== props.translation) {
                 setTranslation(props.translation);
               }
+            }}
+            value={{
+              scale,
+              translation,
             }}
             scale={scale}
             translation={translation}
@@ -270,8 +298,10 @@ const Map = ({
                   aria-label="Primary Children's Hospital"
                   className="w-64 h-64 z-40 absolute opacity-0"
                   style={{ transform: "translate3d(1430px, 690px, 0)" }}
-                  onClick={() => setActiveStory("main")}
-                  onTouchEnd={() => setActiveStory("main")}
+                  onMouseDown={handlePCHPinClickStart}
+                  onMouseUp={handlePCHPinClickEnd}
+                  onTouchStart={handlePCHPinClickStart}
+                  onTouchEnd={handlePCHPinClickEnd}
                 />
               )}
             </div>

@@ -162,7 +162,7 @@ const StoryOverlay = ({
     activeStory && (
       <>
         <div
-          className={`fixed z-20 inset-0 bg-white opacity-50`}
+          className={`fixed z-20 inset-0 bg-blue-400 opacity-50`}
           onClick={() => {
             setShareOpen(false);
             setActiveStory(null);
@@ -177,7 +177,7 @@ const StoryOverlay = ({
             }}
           >
             <div
-              className="relative bg-white w-full md:w-2/3 xl:w-2/5 mx-auto py-8 md:py-8 px-8 md:px-16 rounded-lg shadow-md"
+              className="relative bg-white w-full md:max-w-3xl xl:max-w-4xl mx-auto py-8 md:py-8 px-8 md:px-16 rounded-lg shadow-md"
               onClick={(e) => {
                 e.stopPropagation();
               }}
