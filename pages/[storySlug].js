@@ -122,7 +122,7 @@ const Story = ({ story, title, body, footerText, media }) => {
         </div>
       </div>
       <div
-        className="fixed inset-0 bg-gray-600 opacity-50"
+        className="fixed inset-0 bg-blue-400 opacity-50"
         onClick={() => {
           Router.push("/");
         }}
