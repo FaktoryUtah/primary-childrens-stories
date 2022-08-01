@@ -1,5 +1,5 @@
 import React from "react";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 import * as animationData from "./rams.json";
 
 const Rams = ({ width, height, left, top }) => {
@@ -24,8 +24,9 @@ const Rams = ({ width, height, left, top }) => {
       }}
     >
       <Lottie
-        ariaRole="figure"
-        options={defaultOptions}
+        role="figure"
+        aria-labelledby="rams"
+        {...defaultOptions}
         height={height}
         width={width}
       />

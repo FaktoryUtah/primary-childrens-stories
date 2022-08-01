@@ -1,12 +1,11 @@
 import React from "react";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 import * as animationData from "./welcome-map.json";
 
 const WelcomeMap = ({ className }) => {
   const defaultOptions = {
     loop: true,
     autoplay: true,
-    maxWidth: "100%",
     animationData: animationData.default,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
@@ -21,7 +20,7 @@ const WelcomeMap = ({ className }) => {
         maxWidth: "100%",
       }}
     >
-      <Lottie ariaRole="figure" options={defaultOptions} />
+      <Lottie role="figure" aria-labelledby="map" {...defaultOptions} />
     </div>
   );
 };
