@@ -1,5 +1,5 @@
 import React from "react";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 import * as animationData from "./deer.json";
 
 const Deer = ({ width, height, left, top }) => {
@@ -24,8 +24,9 @@ const Deer = ({ width, height, left, top }) => {
       }}
     >
       <Lottie
-        ariaRole="figure"
-        options={defaultOptions}
+        role="figure"
+        aria-labelledby="deer"
+        {...defaultOptions}
         height={height}
         width={width}
       />

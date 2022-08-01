@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
 import Head from "next/head";
+import { useEffect } from "react";
 import TagManager from "react-gtm-module";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/index.css";
