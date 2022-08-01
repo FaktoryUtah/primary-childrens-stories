@@ -39,5 +39,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-padding-safe")()],
+  plugins: [require("tailwindcss-padding-safe")],
 };
