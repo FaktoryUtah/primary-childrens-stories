@@ -1,18 +1,24 @@
+import Facebook from "components/facebook";
+import LinkIcon from "components/link-icon";
+import Twitter from "components/twitter";
+import { FacebookShareButton, TwitterShareButton } from "next-share";
+import dynamic from "next/dynamic";
 import Error from "next/error";
 import Head from "next/head";
 import Router from "next/router";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import { FacebookShareButton, TwitterShareButton } from "next-share";
-import { toast } from "react-toastify";
 import { useState } from "react";
-import Facebook from "components/facebook";
+import { toast } from "react-toastify";
 import client from "shared/contentful";
-import Twitter from "components/twitter";
-import contentfulRichText from "shared/contentfulRichText";
 import contentfulPrintMedia from "shared/contentfulPrintMedia";
-import youtubeEmbed from "shared/youtubeEmbed";
-import LinkIcon from "components/link-icon";
+import contentfulRichText from "shared/contentfulRichText";
 import getHostName from "shared/getHostName";
+import youtubeEmbed from "shared/youtubeEmbed";
+
+const CopyToClipboard = dynamic(
+  () =>
+    import("components/copy-to-clipboard").then((mod) => mod.CopyToClipboard),
+  { ssr: false }
+);
 
 const Story = ({ story, title, body, footerText, media }) => {
   const [shareOpen, setShareOpen] = useState(false);
@@ -99,13 +105,13 @@ const Story = ({ story, title, body, footerText, media }) => {
               </div>
             </TwitterShareButton>
             <CopyToClipboard onCopy={onCopyLink} text={url}>
-              <button
+              <span
                 className={`${
                   shareOpen ? "flex" : "hidden"
                 } flex items-center justify-center -mt-1 pt-3 pb-2 px-4 bg-gray-400 hover:bg-gray-500 text-gray-600 text-sm uppercase rounded-b-lg shadow-md z-20 focus:outline-none`}
               >
                 <LinkIcon className="w-8 p-1 fill-current" />
-              </button>
+              </span>
             </CopyToClipboard>
           </div>
           <div className="text-xl font-bold leading-relaxed mb-6 mt-16">
