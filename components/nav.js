@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { FacebookShareButton, TwitterShareButton } from "react-share";
+import { FacebookShareButton, TwitterShareButton } from "next-share";
 import { toast } from "react-toastify";
 import Facebook from "components/facebook";
 import Twitter from "components/twitter";
@@ -118,26 +118,32 @@ const Nav = ({
           Share
         </button>
         {shareOpen && (
-          <FacebookShareButton
-            className={`
+          <>
+            <FacebookShareButton
+              url={`https://${getHostName()}`}
+              resetButtonStyle={false}
+              onClick={() => setWillShowThankYou(true)}
+            >
+              <div
+                className={`
               flex items-center justify-center -mt-1 pt-3 pb-2 px-4 bg-facebook-500 hover:bg-facebook-600 text-white text-sm rounded-b-lg shadow-md z-20 focus:outline-none
             `}
-            url={`https://${getHostName()}`}
-            resetButtonStyle={false}
-            onClick={() => setWillShowThankYou(true)}
-          >
-            <Facebook className="w-8 fill-current" />
-          </FacebookShareButton>
-        )}
-        {shareOpen && (
-          <TwitterShareButton
-            className={`flex items-center justify-center -mt-1 pt-3 pb-2 px-4 bg-twitter-500 hover:bg-twitter-600 text-white text-sm rounded-b-lg shadow-md z-10 focus:outline-none`}
-            url={`https://${getHostName()}`}
-            resetButtonStyle={false}
-            onClick={() => setWillShowThankYou(true)}
-          >
-            <Twitter className="w-8 fill-current" />
-          </TwitterShareButton>
+              >
+                <Facebook className="w-8 fill-current" />
+              </div>
+            </FacebookShareButton>
+            <TwitterShareButton
+              url={`https://${getHostName()}`}
+              resetButtonStyle={false}
+              onClick={() => setWillShowThankYou(true)}
+            >
+              <div
+                className={`flex items-center justify-center -mt-1 pt-3 pb-2 px-4 bg-twitter-500 hover:bg-twitter-600 text-white text-sm rounded-b-lg shadow-md z-10 focus:outline-none`}
+              >
+                <Twitter className="w-8 fill-current" />
+              </div>
+            </TwitterShareButton>
+          </>
         )}
       </div>
 

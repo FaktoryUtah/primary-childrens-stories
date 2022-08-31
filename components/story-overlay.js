@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FacebookShareButton, TwitterShareButton } from "react-share";
+import { FacebookShareButton, TwitterShareButton } from "next-share";
 import { toast } from "react-toastify";
 import Facebook from "./facebook";
 import Twitter from "./twitter";
@@ -205,24 +205,30 @@ const StoryOverlay = ({
                       Share
                     </button>
                     <FacebookShareButton
-                      className={`${
-                        shareOpen ? "flex" : "hidden"
-                      } items-center justify-center -mt-1 pt-3 pb-2 px-4 bg-facebook-500 hover:bg-facebook-600 text-white text-sm uppercase rounded-b-lg shadow-md z-40 focus:outline-none`}
                       url={url}
                       resetButtonStyle={false}
                       onClick={() => setWillShowThankYou(true)}
                     >
-                      <Facebook className="w-8 fill-current" />
+                      <div
+                        className={`${
+                          shareOpen ? "flex" : "hidden"
+                        } items-center justify-center -mt-1 pt-3 pb-2 px-4 bg-facebook-500 hover:bg-facebook-600 text-white text-sm uppercase rounded-b-lg shadow-md z-40 focus:outline-none`}
+                      >
+                        <Facebook className="w-8 fill-current" />
+                      </div>
                     </FacebookShareButton>
                     <TwitterShareButton
-                      className={`${
-                        shareOpen ? "flex" : "hidden"
-                      } items-center justify-center -mt-1 pt-3 pb-2 px-4 bg-twitter-500 hover:bg-twitter-600 text-white text-sm uppercase rounded-b-lg shadow-md z-30 focus:outline-none`}
                       url={url}
                       resetButtonStyle={false}
                       onClick={() => setWillShowThankYou(true)}
                     >
-                      <Twitter className="w-8 fill-current" />
+                      <div
+                        className={`${
+                          shareOpen ? "flex" : "hidden"
+                        } items-center justify-center -mt-1 pt-3 pb-2 px-4 bg-twitter-500 hover:bg-twitter-600 text-white text-sm uppercase rounded-b-lg shadow-md z-30 focus:outline-none`}
+                      >
+                        <Twitter className="w-8 fill-current" />
+                      </div>
                     </TwitterShareButton>
                     <button
                       className={`${

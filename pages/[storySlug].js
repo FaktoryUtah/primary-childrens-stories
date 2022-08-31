@@ -2,7 +2,7 @@ import Error from "next/error";
 import Head from "next/head";
 import Router from "next/router";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { FacebookShareButton, TwitterShareButton } from "react-share";
+import { FacebookShareButton, TwitterShareButton } from "next-share";
 import { toast } from "react-toastify";
 import { useState } from "react";
 import Facebook from "components/facebook";
@@ -80,23 +80,23 @@ const Story = ({ story, title, body, footerText, media }) => {
             >
               Share
             </button>
-            <FacebookShareButton
-              className={`${
-                shareOpen ? "flex" : "hidden"
-              } items-center justify-center -mt-1 pt-3 pb-2 px-4 bg-facebook-500 hover:bg-facebook-600 text-white text-sm uppercase rounded-b-lg shadow-md z-20 focus:outline-none`}
-              url={url}
-              resetButtonStyle={false}
-            >
-              <Facebook className="w-8 fill-current" />
+            <FacebookShareButton url={url} resetButtonStyle={false}>
+              <div
+                className={`${
+                  shareOpen ? "flex" : "hidden"
+                } items-center justify-center -mt-1 pt-3 pb-2 px-4 bg-facebook-500 hover:bg-facebook-600 text-white text-sm uppercase rounded-b-lg shadow-md z-20 focus:outline-none`}
+              >
+                <Facebook className="w-8 fill-current" />
+              </div>
             </FacebookShareButton>
-            <TwitterShareButton
-              className={`${
-                shareOpen ? "flex" : "hidden"
-              } items-center justify-center -mt-1 pt-3 pb-2 px-4 bg-twitter-500 hover:bg-twitter-600 text-white text-sm uppercase rounded-b-lg shadow-md z-20 focus:outline-none`}
-              url={url}
-              resetButtonStyle={false}
-            >
-              <Twitter className="w-8 fill-current" />
+            <TwitterShareButton url={url} resetButtonStyle={false}>
+              <div
+                className={`${
+                  shareOpen ? "flex" : "hidden"
+                } items-center justify-center -mt-1 pt-3 pb-2 px-4 bg-twitter-500 hover:bg-twitter-600 text-white text-sm uppercase rounded-b-lg shadow-md z-20 focus:outline-none`}
+              >
+                <Twitter className="w-8 fill-current" />
+              </div>
             </TwitterShareButton>
             <CopyToClipboard onCopy={onCopyLink} text={url}>
               <button
