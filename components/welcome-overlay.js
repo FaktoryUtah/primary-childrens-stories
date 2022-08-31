@@ -17,7 +17,7 @@ const WelcomeOverlay = ({ dismissOverlay, welcomeOverlayContent }) => {
           <div className="absolute right-0 top-0 px-4 py-2">
             <button className="p-2 font-bold text-gray-600">X</button>
           </div>
-          <WelcomeMap className="mx-auto -mb-12 max-w-full inline-block z-20 lg:w-2/3" />
+          <WelcomeMap className="mx-auto -mb-12 max-w-full inline-block z-20 lg:w-2/3 min-h-[200px]" />
           <div
             className="text-lg max-w-lg mx-auto my-8"
             dangerouslySetInnerHTML={{
