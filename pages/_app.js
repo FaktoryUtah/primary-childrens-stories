@@ -30,6 +30,7 @@ function MyApp({ Component, pageProps }) {
           property="og:image"
           content="https://herekidswin.com/og-image.jpg"
         />
+        <meta name="theme-color" content="#005eaa" />
         <link
           type="text/plain"
           rel="author"
