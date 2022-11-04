@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
 import { useEffect } from "react";
 import TagManager from "react-gtm-module";
@@ -48,6 +49,7 @@ function MyApp({ Component, pageProps }) {
         }}
       />
       <Component {...pageProps} />
+      <Analytics />
     </>
   );
 }

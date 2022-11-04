@@ -6,7 +6,14 @@ const contentfulPrintMedia = (media) => {
   }
   if (media.type.startsWith("image")) {
     return (
-      <Image key={media.url} src={`${media.url}?w=800`} title={media.title} />
+      <Image
+        className="min-h-[400px]"
+        key={media.url}
+        src={`${media.url}?w=800`}
+        title={media.title}
+        width={media.image?.width || "800"}
+        height={media.image?.height || "400"}
+      />
     );
   }
   if (media.type.startsWith("video")) {
