@@ -175,6 +175,8 @@ const Nav = ({
                   src="/images/primary-childrens-hospital-logo.svg"
                   style={{ width: "180px", height: "70px" }}
                   onClick={recenterMap}
+                  width="320"
+                  height="124"
                 />
                 <button
                   onClick={() => {

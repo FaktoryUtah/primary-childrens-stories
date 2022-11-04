@@ -29,6 +29,8 @@ const WelcomeOverlay = ({ dismissOverlay, welcomeOverlayContent }) => {
               alt={`Primary Children's Hospital`}
               className="max-w-xs mx-auto"
               src="/images/primary-childrens-hospital-logo.svg"
+              width="320"
+              height="124"
             />
           </div>
         </div>
