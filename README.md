@@ -1,3 +1,5 @@
+![Repo image](public/og-image.jpg)
+
 # Here, Kids Win Public Website
 
 ## Running locally in development mode
