@@ -5,7 +5,6 @@ const contentfulPrintMedia = (media) => {
     return;
   }
   if (media.type.startsWith("image")) {
-    console.log("media", media);
     return (
       <Image
         className="min-h-[400px]"
