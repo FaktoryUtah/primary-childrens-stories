@@ -1,6 +1,6 @@
 import YouTube from "react-youtube";
 
-const youtubeEmbed = youtubeLink => {
+const youtubeEmbed = (youtubeLink) => {
   const found = youtubeLink.match(
     /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/i
   );
@@ -9,7 +9,7 @@ const youtubeEmbed = youtubeLink => {
       <YouTube
         videoId={found[2]}
         id={found[2]}
-        className={`w-full my-4 bg-blue-900 min-h-full`}
+        className={`w-full my-4 bg-blue-900 min-h-full flex justify-center`}
         containerClassName={`w-full`}
         opts={{
           playerVars: {
@@ -17,8 +17,12 @@ const youtubeEmbed = youtubeLink => {
             listType: "user_uploads",
             modestbranding: 1,
             rel: 0,
-            showinfo: 0
-          }
+            showinfo: 0,
+          },
+          style: {
+            height: "100%",
+            width: "100%",
+          },
         }}
       />
     );

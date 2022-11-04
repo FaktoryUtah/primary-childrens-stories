@@ -7,7 +7,8 @@ const options = {
       data: {
         target: { fields },
       },
-    }) => `<img src="${fields.file.url}?w=800" alt="${fields.title}"/>`,
+    }) =>
+      `<img src="${fields.file.url}?w=800" width="800" alt="${fields.title}"/>`,
     [INLINES.HYPERLINK]: (node) =>
       `<a href="${node.data.uri}" target="_blank">
           ${node.content[0].value}
