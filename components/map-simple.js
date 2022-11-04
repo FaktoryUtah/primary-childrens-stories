@@ -13,7 +13,7 @@ const MapSimple = ({ children }) => {
         />
         <img
           alt="map background"
-          src="/images/pch-background.png"
+          src="/images/pch-background.webp"
           style={{ maxWidth: "none", width: "3200px", height: "2400px" }}
         />
       </picture>

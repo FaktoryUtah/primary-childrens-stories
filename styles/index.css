@@ -74,5 +74,5 @@ img {
 
 .map-picture,
 .animation {
-  cursor: url("/images/cursor.png"), move;
+  cursor: url("/images/cursor.webp"), move;
 }

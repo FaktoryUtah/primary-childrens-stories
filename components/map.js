@@ -273,7 +273,7 @@ const Map = ({
                   id={`mapImage`}
                   onLoad={bgLoaded}
                   ref={mapImage}
-                  src="/images/pch-background.png"
+                  src="/images/pch-background.webp"
                   style={{
                     width: bgImageDimensions.width,
                     height: bgImageDimensions.height,
