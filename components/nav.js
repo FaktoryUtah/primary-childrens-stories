@@ -171,7 +171,7 @@ const Nav = ({
                 </div>
                 <img
                   alt="Primary Children's Hospital"
-                  className="mx-auto"
+                  className="max-w-full mx-auto"
                   src="/images/primary-childrens-hospital-logo.svg"
                   style={{ width: "180px", height: "70px" }}
                   onClick={recenterMap}

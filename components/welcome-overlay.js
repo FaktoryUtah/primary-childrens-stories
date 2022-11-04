@@ -27,7 +27,7 @@ const WelcomeOverlay = ({ dismissOverlay, welcomeOverlayContent }) => {
           <div className="w-full mt-4">
             <img
               alt={`Primary Children's Hospital`}
-              className="max-w-xs mx-auto"
+              className="max-w-full mx-auto"
               src="/images/primary-childrens-hospital-logo.svg"
               width="320"
               height="124"

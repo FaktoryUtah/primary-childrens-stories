@@ -136,7 +136,7 @@ const StoryOverlay = ({
           >
             <img
               alt="Primary Children's Hospital"
-              class="max-w-xs mx-auto"
+              class="max-w-full mx-auto"
               src="/images/primary-childrens-hospital-logo.svg"
               width="320"
               height="124"
