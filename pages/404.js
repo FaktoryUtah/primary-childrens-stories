@@ -27,7 +27,7 @@ const FourOhFour = () => {
             e.stopPropagation();
           }}
         >
-          <div>
+          <div className="text-center">
             <h1>404: Page not found</h1>
             <p>
               Looks like you tried to access a page that doesn't exist. Please
