@@ -170,15 +170,7 @@ export async function getStaticProps({ params }) {
   });
 
   if (!stories.items.length) {
-    return {
-      props: {
-        body: "",
-        footerText: "",
-        media: "",
-        story: false,
-        title: "",
-      },
-    };
+    return { notFound: true };
   }
 
   const story = stories.items[0];
